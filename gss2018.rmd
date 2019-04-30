@@ -31,12 +31,6 @@ levels(mydata4$VOTE12)[2] <- "no in 12"
 ```
 
 
-```{r}
-barchartGC(~VOTE16+VOTE12, data=mydata4, type = "percent") 
-chisqtestGC(~VOTE16+VOTE12, data=mydata4)
-votetab=xtabs(~VOTE16+VOTE12, data=mydata4)
-fisher.test(votetab)
-```
 
 # Introduction Question 1
 
@@ -55,6 +49,13 @@ This data is from the 2018 General Social Survey. The first blocks of R-code has
 
 ### Descriptive Results
 
+```{r}
+barchartGC(~VOTE16+VOTE12, data=mydata4, type = "percent") 
+chisqtestGC(~VOTE16+VOTE12, data=mydata4)
+votetab=xtabs(~VOTE16+VOTE12, data=mydata4)
+fisher.test(votetab)
+```
+
 #### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -65,6 +66,8 @@ This data is from the 2018 General Social Survey. The first blocks of R-code has
 
 ### Inferential Results
 
+Referring to the chart above people voted 12, and no in 12.
+
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 # Introduction Question 2
@@ -72,6 +75,15 @@ This data is from the 2018 General Social Survey. The first blocks of R-code has
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
 Now answer Is belief in the bigbang theory (BIGBANG) independent of belief in the afterlife (POSTLIFE)
+
+```{r}
+barchartGC(~BIGBANG+POSTLIFE, data=mydata4, type = "percent") 
+chisqtestGC(~BIGBANG+POSTLIFE, data=mydata4)
+votetab=xtabs(~BIGBANG+POSTLIFE, data=mydata4)
+fisher.test(votetab)
+```
+
+We reject it.
 
 ## Methods
 
@@ -107,6 +119,13 @@ This time compare the opinion on death penalty (CAPPUN) with opinion on courts (
 
 ##Results
 
+```{r}
+barchartGC(~CAPPUN+COURTS, data=mydata4, type = "percent") 
+chisqtestGC(~CAPPUN+COURTS, data=mydata4)
+votetab=xtabs(~CAPPUN+COURTS, data=mydata4)
+fisher.test(votetab)
+```
+
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ### Descriptive Results
@@ -121,8 +140,12 @@ This time compare the opinion on death penalty (CAPPUN) with opinion on courts (
 
 ### Inferential Results
 
+
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+P-value for the chart above is 0
+Statistics for chart above is 42.0594
+I believe "CAPPUN favor" chart is not harsh enough as "CAPPUN oppose" 
 
 # Discussion and Conclusion
 
